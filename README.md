@@ -10,6 +10,12 @@ This Python 3 software show in real-time how many people are in space.
 
 Created with the api of http://open-notify.org/Open-Notify-API/People-In-Space/
 
+## Download the Windows .exe version :
+
+You can run it with Python 3 and the right libraries or for Windows you can use the .exe software that I created there :
+
+[![Download People In Space](https://img.shields.io/sourceforge/dm/people-in-space.svg)](https://sourceforge.net/projects/people-in-space/files/latest/download)
+
 ## What you need to make it work :  
 
 
