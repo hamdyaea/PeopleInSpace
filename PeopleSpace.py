@@ -28,7 +28,7 @@ def parser():
                 keyload = keyload + 1
                 if keyload > key:
                     break
-            image = "spacecraft.png"
+            image = "spacecraft.gif"
             msg = (("This software show in real-time how many people are in space.\n\n")\
                    +str(("Number of people in space : ")+str(people["number"]))\
                    +str("\n\n")+(name))
@@ -41,7 +41,7 @@ def parser():
 
 
         else:
-            image = "spacecraft.png"
+            image = "spacecraft.gif"
             msg = "Impossible to download the data"
             choices = ["Close"]
             reply = buttonbox(msg, image=image, choices=choices)
