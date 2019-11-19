@@ -30,6 +30,12 @@ At least the version 0.98
 sudo python3 -m pip install --upgrade easygui 
 ```
 
+You need to install urrlib3 :
+
+```sh
+sudo python3 -m pip install urllib3
+```
+
 ## How to launch this software :  
 
 ```sh
