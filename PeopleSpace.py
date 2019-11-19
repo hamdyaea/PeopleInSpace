@@ -52,7 +52,11 @@ def parser():
             sys.exit(0)
 
     else:
-        print("no data - error")
+        msg = "Impossible to download the data"
+        choices = ["Close"]
+        reply = buttonbox(msg, image=image, choices=choices)
+        if reply == "Close":
+            sys.exit(1)
 
 
 parser()
