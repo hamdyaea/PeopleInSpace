@@ -9,48 +9,43 @@ from easygui import *
 import sys
 import urllib.request  # install it with : pip3 install urllib3
 
-
-# class creation
-class People:
-    def __init__(self):
-        self.name = "default"
-        self.spacecraft = "default"
-        self.number = 0
-        self.image = "spacecraft.gif"
+total = ""
+name = ""
+space_name = ""
+space_craft = ""
+image = "spacecraft.gif"
 
 
-# variables creation
 def parser():
-    name = ""
-    People.image = "spacecraft.gif"
+    global name, space_name, space_craft, total
     urlData = "http://api.open-notify.org/astros.json"
     webURL = urllib.request.urlopen(urlData)
     data = webURL.read()
     encoding = webURL.info().get_content_charset("utf-8")
     space = json.loads(data.decode(encoding))
-    People.number = space["number"]
+    total = space["number"]
     if space["message"] == "success":
         for i in space["people"]:
-            People.name = i["name"]
-            People.spacecraft = i["craft"]
+            space_name = i["name"]
+            space_craft = i["craft"]
             name = name + (
                 ("Name of the astronaut : ")
-                + str(People.name)
+                + str(space_name)
                 + str("\n\n")
                 + str("Spacecraft : ")
-                + str(People.spacecraft)
+                + str(space_craft)
                 + str("\n\n")
             )
 
         msg = (
             ("This software show in real-time how many people are in space.\n\n")
             + str("Number of people in space : ")
-            + str(People.number)
+            + str(total)
             + str("\n\n")
             + (name)
         )
         choices = ["Close"]
-        reply = buttonbox(msg, image=People.image, choices=choices)
+        reply = buttonbox(msg, image=image, choices=choices)
         if reply == "Close":
             sys.exit(0)
         else:
@@ -59,10 +54,9 @@ def parser():
     else:
         msg = "Impossible to download the data"
         choices = ["Close"]
-        reply = buttonbox(msg, image=People.image, choices=choices)
+        reply = buttonbox(msg, image=image, choices=choices)
         if reply == "Close":
             sys.exit(1)
 
 
-# starter
 parser()
