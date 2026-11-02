@@ -1,57 +1,31 @@
-![Awesome](awesome.svg) ![Python](python.png)  
+# People in Space
 
-# Number of people in space
+A lightweight Python 3 + Tkinter viewer for the public Open Notify astronaut roster.
 
-![Screenshot](screenshot.png)
+**Developer:** Hamdy Abou El Anein
+**Contact:** info@daylightlinux.ch
+**License:** GNU GPL v3 (see LICENSE).
 
-## What's this software ?  
+## Features
 
-This Python 3 software show in real-time how many people are in space.
+- Modern Tkinter interface replacing EasyGUI.
+- Asynchronous refresh so the interface stays responsive.
+- Input validation, timeout handling and explicit error messages.
+- Text-only mode for terminals and scripts.
 
-Created with the api of http://open-notify.org/Open-Notify-API/People-In-Space/
+## Data limitations
 
-## Download the Windows .exe version :
+Open Notify may be unavailable or delayed; its astronaut roster should not be
+treated as an authoritative real-time mission manifest. Its original API endpoint
+is served over HTTP rather than HTTPS. The application does not collect user data.
 
-You can run it with Python 3 and the right libraries or for Windows you can use the .exe software that I created there :
+## Run
 
-[![Download People In Space](https://img.shields.io/sourceforge/dm/people-in-space.svg)](https://sourceforge.net/projects/people-in-space/files/latest/download)
-[![Download People In Space](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/people-in-space/files/latest/download)
+    python3 PeopleSpace.py
+    python3 PeopleSpace.py --text
 
-## What you need to make it work :  
+## Test
 
+    python3 -m unittest discover -s tests -v
 
-The last version of Python 3.
-
-you also need to have the easygui library for python 3:
-
-At least the version 0.98
-
-```sh
-sudo python3 -m pip install --upgrade easygui 
-```
-
-You need to install urrlib3 :
-
-```sh
-sudo python3 -m pip install urllib3
-```
-
-## How to launch this software :  
-
-```sh
-python3 PeopleSpace.py
-```  
-
-## Requirements :
-
-If you miss a module, install it with the command pip install module-name. For example if you miss PIL you can install it with : sudo pip3 install pillow.
-You must have read and write rights on the folder where you run this software.
-
-
-## Developer - Author
-
-Hamdy Abou El Anein
-
-## Homepage
-
-http://www.daylightlinux.ch 
+Original source: [old branch](https://github.com/hamdyaea/PeopleInSpace/tree/old).

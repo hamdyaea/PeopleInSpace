@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
+# Developer: Hamdy Abou El Anein
+# Contact: info@daylightlinux.ch
+# SPDX-License-Identifier: GPL-3.0-or-later
+"""Compatibility CLI for the People in Space application."""
+from PeopleSpace import main
 
-import urllib.request, json
-with urllib.request.urlopen("http://api.open-notify.org/astros.json") as url:
-    data = json.loads(url.read().decode())
-
-    howmany = data["number"]
-    wholist = data["people"]
-
-    print(str("Total People in space : ")+str(howmany))
-    print("\n")
-    for i in wholist:
-        print(str("Name : ")+str(i["name"]))
-        print(str("Spacecraft : ")+str(i["craft"]))
-        print("\n")
+if __name__ == "__main__":
+    import sys
+    sys.argv = [sys.argv[0], "--text"]
+    main()
