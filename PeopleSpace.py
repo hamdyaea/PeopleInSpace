@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from pathlib import Path
 import threading
 import tkinter as tk
 from tkinter import ttk
@@ -54,6 +55,8 @@ class PeopleApp(tk.Tk):
                  font=("DejaVu Sans", 16, "bold")).pack(anchor="w")
         tk.Label(frame, textvariable=self.status, bg="#101827", fg="#d0dbea",
                  wraplength=560).pack(anchor="w", pady=12)
+        self.spacecraft = tk.PhotoImage(file=str(Path(__file__).with_name("spacecraft-ui.png")))
+        tk.Label(frame, image=self.spacecraft, bg="#101827").pack(anchor="w")
         self.listbox = tk.Listbox(frame, bg="#192a40", fg="white", selectbackground="#335f66",
                                   font=("DejaVu Sans", 11), relief="flat")
         self.listbox.pack(fill="both", expand=True)
